@@ -56,7 +56,6 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func playEchoAudio(sender: UIButton) {
         // Icon image from Ryan Collins: https://github.com/RyanCCollins/Pitch-Perfect
-        //TODO: create new audioPlayer, play after first
         stopPlayersAndEngines()
         audioPlayer.play()
         
