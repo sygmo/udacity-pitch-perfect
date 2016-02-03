@@ -30,6 +30,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         // Hide the stop button
         stopButton.hidden = true
         recordButton.enabled = true
+        pauseButton.hidden = true
+        resumeButton.hidden = true
         recordingInProgress.hidden = false
         recordingInProgress.text = "Tap to Record"
     }
