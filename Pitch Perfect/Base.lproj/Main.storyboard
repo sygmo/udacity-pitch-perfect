@@ -152,26 +152,47 @@
                                 <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2h-JZ-Pra">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2h-JZ-Pra">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="stop button"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AHV-FC-dnS"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybD-7A-7Q9">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="resume"/>
+                                <connections>
+                                    <action selector="resumeRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MTB-VI-pnK"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLd-xQ-5gJ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="pause"/>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aXL-4E-izO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z2h-JZ-Pra" secondAttribute="bottom" constant="20" id="7we-ZB-FRU"/>
+                            <constraint firstItem="ybD-7A-7Q9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jb8-jj-LOj"/>
                             <constraint firstItem="PBO-Y2-D5F" firstAttribute="centerX" secondItem="rDR-sw-Sxe" secondAttribute="centerX" id="PCP-2B-rjp"/>
                             <constraint firstItem="PBO-Y2-D5F" firstAttribute="top" secondItem="rDR-sw-Sxe" secondAttribute="bottom" constant="17" id="XTW-44-5NR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ybD-7A-7Q9" secondAttribute="bottom" constant="50" id="agy-Lf-yAe"/>
+                            <constraint firstItem="ybD-7A-7Q9" firstAttribute="leading" secondItem="DLd-xQ-5gJ" secondAttribute="trailing" constant="11" id="bRg-XT-ZVb">
+                                <variation key="widthClass=compact" constant="12"/>
+                            </constraint>
                             <constraint firstItem="rDR-sw-Sxe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cMg-EI-BHh"/>
+                            <constraint firstItem="Z2h-JZ-Pra" firstAttribute="leading" secondItem="ybD-7A-7Q9" secondAttribute="trailing" constant="12" id="dYO-eL-U8Q"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z2h-JZ-Pra" secondAttribute="bottom" constant="147" id="kzD-kU-jEe">
                                 <variation key="widthClass=compact" constant="50"/>
                             </constraint>
                             <constraint firstItem="rDR-sw-Sxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="obL-op-xvd"/>
                             <constraint firstItem="PBO-Y2-D5F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rfu-Zg-QVZ"/>
                             <constraint firstItem="PBO-Y2-D5F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t0M-Qh-LMO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DLd-xQ-5gJ" secondAttribute="bottom" constant="50" id="twR-qr-UqU"/>
                             <constraint firstItem="Z2h-JZ-Pra" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ymj-rS-CFR"/>
                         </constraints>
                         <variation key="default">
@@ -179,17 +200,24 @@
                                 <exclude reference="rDR-sw-Sxe"/>
                                 <exclude reference="PBO-Y2-D5F"/>
                                 <exclude reference="Z2h-JZ-Pra"/>
+                                <exclude reference="ybD-7A-7Q9"/>
+                                <exclude reference="DLd-xQ-5gJ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7we-ZB-FRU"/>
-                                <exclude reference="kzD-kU-jEe"/>
-                                <exclude reference="ymj-rS-CFR"/>
                                 <exclude reference="cMg-EI-BHh"/>
                                 <exclude reference="obL-op-xvd"/>
                                 <exclude reference="PCP-2B-rjp"/>
                                 <exclude reference="XTW-44-5NR"/>
                                 <exclude reference="rfu-Zg-QVZ"/>
                                 <exclude reference="t0M-Qh-LMO"/>
+                                <exclude reference="Jb8-jj-LOj"/>
+                                <exclude reference="bRg-XT-ZVb"/>
+                                <exclude reference="dYO-eL-U8Q"/>
+                                <exclude reference="ymj-rS-CFR"/>
+                                <exclude reference="7we-ZB-FRU"/>
+                                <exclude reference="agy-Lf-yAe"/>
+                                <exclude reference="kzD-kU-jEe"/>
+                                <exclude reference="twR-qr-UqU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -197,24 +225,33 @@
                                 <include reference="rDR-sw-Sxe"/>
                                 <include reference="PBO-Y2-D5F"/>
                                 <include reference="Z2h-JZ-Pra"/>
+                                <include reference="ybD-7A-7Q9"/>
+                                <include reference="DLd-xQ-5gJ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7we-ZB-FRU"/>
-                                <include reference="kzD-kU-jEe"/>
-                                <include reference="ymj-rS-CFR"/>
                                 <include reference="cMg-EI-BHh"/>
                                 <include reference="obL-op-xvd"/>
                                 <include reference="PCP-2B-rjp"/>
                                 <include reference="XTW-44-5NR"/>
                                 <exclude reference="rfu-Zg-QVZ"/>
                                 <exclude reference="t0M-Qh-LMO"/>
+                                <include reference="Jb8-jj-LOj"/>
+                                <include reference="bRg-XT-ZVb"/>
+                                <include reference="dYO-eL-U8Q"/>
+                                <exclude reference="ymj-rS-CFR"/>
+                                <exclude reference="7we-ZB-FRU"/>
+                                <include reference="agy-Lf-yAe"/>
+                                <include reference="kzD-kU-jEe"/>
+                                <include reference="twR-qr-UqU"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="5vy-nw-7Mb"/>
                     <connections>
+                        <outlet property="pauseButton" destination="DLd-xQ-5gJ" id="WeQ-Zi-hDr"/>
                         <outlet property="recordButton" destination="rDR-sw-Sxe" id="H6O-lU-Bfn"/>
                         <outlet property="recordingInProgress" destination="PBO-Y2-D5F" id="TUX-UL-F9w"/>
+                        <outlet property="resumeButton" destination="ybD-7A-7Q9" id="cvm-hK-jBH"/>
                         <outlet property="stopButton" destination="Z2h-JZ-Pra" id="Mve-rJ-h1N"/>
                         <segue destination="DTV-hn-7x9" kind="show" identifier="stopRecording" id="roP-Bt-Zh9"/>
                     </connections>
@@ -247,6 +284,8 @@
         <image name="darth vader" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
+        <image name="pause" width="50" height="50"/>
+        <image name="resume" width="50" height="50"/>
         <image name="slow" width="100" height="100"/>
         <image name="stop button" width="50" height="50"/>
     </resources>

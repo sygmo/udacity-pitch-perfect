@@ -14,6 +14,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var resumeButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
     
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
@@ -36,6 +38,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         recordingInProgress.text = "Recording in Progress..."
         stopButton.hidden = false
         recordButton.enabled = false
+        pauseButton.hidden = false
 
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         
@@ -66,6 +69,21 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         try! audioSession.setActive(false)
     }
     
+    @IBAction func pauseRecording(sender: UIButton) {
+        // Icon image from Ryan Collins: https://github.com/RyanCCollins/Pitch-Perfect
+        pauseButton.hidden = true
+        resumeButton.hidden = false
+        audioRecorder.pause()
+    }
+    
+    
+    @IBAction func resumeRecording(sender: UIButton) {
+        // Icon image from Ryan Collins: https://github.com/RyanCCollins/Pitch-Perfect
+        pauseButton.hidden = false
+        resumeButton.hidden = true
+        audioRecorder.record()
+    }
+    
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag){
             // Step 1 - save the recorded audio
@@ -79,6 +97,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             print("Recording was not successful")
             recordButton.enabled = true
             stopButton.hidden = true
+            resumeButton.hidden = true
+            pauseButton.hidden = true
             
         }
     }
