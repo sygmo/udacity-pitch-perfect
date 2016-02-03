@@ -12,6 +12,7 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
     
     var audioPlayer:AVAudioPlayer!
+    var audioPlayerEcho:AVAudioPlayer! // for echo effect
     var receivedAudio:RecordedAudio!
     var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
@@ -21,8 +22,11 @@ class PlaySoundsViewController: UIViewController {
         // Do any additional setup after loading the view.
         audioPlayer = try! AVAudioPlayer(contentsOfURL: receivedAudio.filePathURL)
         audioPlayer.enableRate = true
+        
+        // For echo effect
+        audioPlayerEcho = try! AVAudioPlayer(contentsOfURL: receivedAudio.filePathURL)
 
-       // From stack overflow
+        // From stack overflow
         audioEngine = AVAudioEngine()
         audioFile = try! AVAudioFile(forReading: receivedAudio.filePathURL)
     }
@@ -50,6 +54,20 @@ class PlaySoundsViewController: UIViewController {
         playAudioWithVariablePitch(-1000)
     }
     
+    @IBAction func playEchoAudio(sender: UIButton) {
+        // Icon image from Ryan Collins: https://github.com/RyanCCollins/Pitch-Perfect
+        //TODO: create new audioPlayer, play after first
+        stopPlayersAndEngines()
+        audioPlayer.play()
+        
+        let echoDelay = 0.5
+        let playTime = audioPlayerEcho.deviceCurrentTime + echoDelay
+        audioPlayerEcho.stop()
+        audioPlayerEcho.volume = 0.4
+        audioPlayerEcho.playAtTime(playTime)
+        
+    }
+    
     func playAudioWithVariablePitch(pitch: Float){
         // From stack overflow
         stopPlayersAndEngines()
@@ -75,18 +93,19 @@ class PlaySoundsViewController: UIViewController {
     func playAudioWithVariableRate(rate: Float) {
         stopPlayersAndEngines()
         audioPlayer.rate = rate
-        audioPlayer.currentTime = 0.0
         audioPlayer.play()
     }
     
     func stopPlayersAndEngines() {
         audioPlayer.stop()
+        audioPlayerEcho.stop()
+        audioPlayer.currentTime = 0.0
+        audioPlayerEcho.currentTime = 0.0
         audioEngine.stop()
     }
     
     @IBAction func stopAudio(sender: UIButton) {
         stopPlayersAndEngines() // stop all audio from playing
-        audioPlayer.currentTime = 0 // resets audio to start
     }
     
     

@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -53,12 +54,20 @@
                                     <action selector="playDarthVaderAudio:" destination="DTV-hn-7x9" eventType="touchUpInside" id="YC1-hW-DKd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucK-5l-fXQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="echo"/>
+                                <connections>
+                                    <action selector="playEchoAudio:" destination="DTV-hn-7x9" eventType="touchUpInside" id="gMd-EN-NGV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vpz-rA-aLR" firstAttribute="centerX" secondItem="fES-kh-poJ" secondAttribute="centerX" id="087-V3-j8V"/>
                             <constraint firstItem="Mcm-ne-HEZ" firstAttribute="leading" secondItem="fES-kh-poJ" secondAttribute="leadingMargin" constant="20" id="3je-RK-Zeh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZvL-lw-1cs" secondAttribute="trailing" constant="20" id="40w-nD-fGR"/>
+                            <constraint firstItem="ucK-5l-fXQ" firstAttribute="centerX" secondItem="fES-kh-poJ" secondAttribute="centerX" id="AB4-F0-KR5"/>
                             <constraint firstItem="bFZ-Uc-sQa" firstAttribute="top" secondItem="Mcm-ne-HEZ" secondAttribute="bottom" constant="94" id="C3k-lv-Jsj">
                                 <variation key="widthClass=compact" constant="93"/>
                             </constraint>
@@ -70,10 +79,14 @@
                             <constraint firstItem="vpz-rA-aLR" firstAttribute="top" secondItem="bFZ-Uc-sQa" secondAttribute="bottom" constant="92" id="RjP-ek-uTp">
                                 <variation key="widthClass=compact" constant="93"/>
                             </constraint>
+                            <constraint firstItem="ucK-5l-fXQ" firstAttribute="top" secondItem="wFh-mc-ELg" secondAttribute="bottom" constant="-3" id="TPR-IU-fkt"/>
                             <constraint firstItem="vpz-rA-aLR" firstAttribute="centerX" secondItem="fES-kh-poJ" secondAttribute="centerX" id="VzL-6i-u0k"/>
                             <constraint firstItem="ZvL-lw-1cs" firstAttribute="top" secondItem="wFh-mc-ELg" secondAttribute="bottom" constant="93" id="frz-nU-Nza"/>
                             <constraint firstItem="Mcm-ne-HEZ" firstAttribute="top" secondItem="our-xw-jPh" secondAttribute="bottom" constant="50" id="h5Q-k1-NnJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wFh-mc-ELg" secondAttribute="trailing" constant="20" id="jBB-d4-586"/>
+                            <constraint firstItem="ucK-5l-fXQ" firstAttribute="width" secondItem="Mcm-ne-HEZ" secondAttribute="height" multiplier="1:1" id="jhb-LX-eLo"/>
+                            <constraint firstItem="ucK-5l-fXQ" firstAttribute="top" secondItem="Mcm-ne-HEZ" secondAttribute="bottom" constant="-3" id="s98-Ae-Y2B"/>
+                            <constraint firstItem="ZvL-lw-1cs" firstAttribute="top" secondItem="ucK-5l-fXQ" secondAttribute="bottom" constant="-4" id="tCx-He-4ZJ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -82,20 +95,26 @@
                                 <exclude reference="wFh-mc-ELg"/>
                                 <exclude reference="bFZ-Uc-sQa"/>
                                 <exclude reference="ZvL-lw-1cs"/>
+                                <exclude reference="ucK-5l-fXQ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ODZ-qj-e7h"/>
                                 <exclude reference="3je-RK-Zeh"/>
                                 <exclude reference="h5Q-k1-NnJ"/>
-                                <exclude reference="40w-nD-fGR"/>
-                                <exclude reference="frz-nU-Nza"/>
+                                <exclude reference="AB4-F0-KR5"/>
+                                <exclude reference="TPR-IU-fkt"/>
+                                <exclude reference="jhb-LX-eLo"/>
+                                <exclude reference="s98-Ae-Y2B"/>
+                                <exclude reference="IMl-We-Ag5"/>
+                                <exclude reference="jBB-d4-586"/>
                                 <exclude reference="C3k-lv-Jsj"/>
                                 <exclude reference="GMv-ZK-vfq"/>
+                                <exclude reference="40w-nD-fGR"/>
+                                <exclude reference="frz-nU-Nza"/>
+                                <exclude reference="tCx-He-4ZJ"/>
                                 <exclude reference="087-V3-j8V"/>
                                 <exclude reference="RjP-ek-uTp"/>
                                 <exclude reference="VzL-6i-u0k"/>
-                                <exclude reference="IMl-We-Ag5"/>
-                                <exclude reference="jBB-d4-586"/>
+                                <exclude reference="ODZ-qj-e7h"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -105,20 +124,26 @@
                                 <include reference="wFh-mc-ELg"/>
                                 <include reference="bFZ-Uc-sQa"/>
                                 <include reference="ZvL-lw-1cs"/>
+                                <include reference="ucK-5l-fXQ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ODZ-qj-e7h"/>
                                 <include reference="3je-RK-Zeh"/>
                                 <include reference="h5Q-k1-NnJ"/>
-                                <include reference="40w-nD-fGR"/>
-                                <include reference="frz-nU-Nza"/>
+                                <include reference="AB4-F0-KR5"/>
+                                <include reference="TPR-IU-fkt"/>
+                                <exclude reference="jhb-LX-eLo"/>
+                                <exclude reference="s98-Ae-Y2B"/>
+                                <include reference="IMl-We-Ag5"/>
+                                <include reference="jBB-d4-586"/>
                                 <include reference="C3k-lv-Jsj"/>
                                 <include reference="GMv-ZK-vfq"/>
+                                <include reference="40w-nD-fGR"/>
+                                <include reference="frz-nU-Nza"/>
+                                <include reference="tCx-He-4ZJ"/>
                                 <include reference="087-V3-j8V"/>
                                 <exclude reference="RjP-ek-uTp"/>
                                 <exclude reference="VzL-6i-u0k"/>
-                                <include reference="IMl-We-Ag5"/>
-                                <include reference="jBB-d4-586"/>
+                                <include reference="ODZ-qj-e7h"/>
                             </mask>
                         </variation>
                     </view>
@@ -282,6 +307,7 @@
     <resources>
         <image name="chipmunk" width="100" height="100"/>
         <image name="darth vader" width="100" height="100"/>
+        <image name="echo" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="pause" width="50" height="50"/>
